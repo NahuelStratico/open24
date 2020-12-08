@@ -1,6 +1,7 @@
 import './app.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Navbar from './component/general/Navbar'
+import Navbar from './component/general/navbar/Navbar'
+
 
 function App() {
   return (
