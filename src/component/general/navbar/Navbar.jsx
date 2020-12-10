@@ -3,6 +3,7 @@ import '../navbar/navbar.css';
 import logo from '../../../assets/logo.png';
 import { IoIosCart, IoIosMenu } from "react-icons/io";
 import {Sidebar} from './Sidebar';
+import CartWidget from '../../CartWidget/CartWidget'
 
 const Navbar = () => {
 
@@ -15,24 +16,26 @@ const Navbar = () => {
             <div className="container">
                 <img src={logo} alt="Logo 24/7" className="logo"/>
 
-                <nav className="navbar" >
-                        <ul className="navbar-content">
-                            <li className="navbar-item"><a href="#" className="navbar-link link">Inicio</a></li>
-                            <li className="navbar-item"><a href="#" className="navbar-link link">Drugstore</a></li>
-                            <li className="navbar-item"><a href="#" className="navbar-link link">Helados & Drinks</a></li>
-                            <li className="navbar-item"><a href="#" className="navbar-link link">Tabaquería & Grow Shop</a></li>
-                            <li className="navbar-item"><a href="#" className="navbar-link link">Deco & Energética</a></li>
-                            <li className="navbar-item"><a href="#" className="navbar-link link">Librería & Tecno</a></li>
-                            <li className="navbar-item"><a href="#" className="navbar-link link">Despensa & Snacks</a></li>
-                            <li className="navbar-item"><a href="#" className="navbar-link link">Juguetería & Regalería</a></li>
-                        </ul>                    
-                </nav>
-                <div className="hamburger-nav">
-                    <a href="#" className="menu-bars">
-                    <IoIosMenu onClick={showSidebar}/>
-                    </a>
+                <div className="nav-container">
+                    <nav className="navbar" >
+                            <ul className="navbar-content">
+                                <li className="navbar-item"><a href="#" className="navbar-link link">Inicio</a></li>
+                                <li className="navbar-item"><a href="#" className="navbar-link link">Drugstore</a></li>
+                                <li className="navbar-item"><a href="#" className="navbar-link link">Helados & Drinks</a></li>
+                                <li className="navbar-item"><a href="#" className="navbar-link link">Tabaquería & Grow Shop</a></li>
+                                <li className="navbar-item"><a href="#" className="navbar-link link">Deco & Energética</a></li>
+                                <li className="navbar-item"><a href="#" className="navbar-link link">Librería & Tecno</a></li>
+                                <li className="navbar-item"><a href="#" className="navbar-link link">Despensa & Snacks</a></li>
+                                <li className="navbar-item"><a href="#" className="navbar-link link">Juguetería & Regalería</a></li>
+                            </ul>                    
+                    </nav>
+                    <div className="hamburger-nav">
+                        <a href="#" className="menu-bars">
+                        <IoIosMenu onClick={showSidebar}/>
+                        </a>
+                    </div>
+                    <CartWidget/>
                 </div>
-                <IoIosCart className="cart"/>
             </div>
             <div className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-item" onClick={showSidebar}>

@@ -17,6 +17,13 @@
     width: 150px;
     margin: 1.5rem 0 1rem;
 }
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
 .navbar{
     width: 100%;
 }
@@ -28,7 +35,6 @@
     list-style: none;
     margin: 0;
     height: 100%;
-    margin-bottom: 1rem;
 }
 .navbar-item{
     margin-right: 1.5rem;
@@ -43,7 +49,7 @@
     font-size: 13px;
     font-weight: 400;
     color: #000000;
-    border: none;
+    border: transparent;
     transition: all .2s;
     height: 100%;
     width: 100%;
@@ -54,7 +60,7 @@
     padding-bottom: 5px;
 }
 .cart{
-    font-size: 4.5rem;
+    font-size: 2rem;
     color: gray;
     cursor: pointer;
     transition: all .2s;
@@ -84,9 +90,16 @@
     }
     .container{
         flex-direction: row;
+        justify-content: space-between;
     }
     .logo {
         width: 60px;
+    }
+    .cart{
+        font-size: 4.5rem;
+    }
+    .nav-container{
+        margin-bottom: 0;
     }
     .hamburger-nav{
         display: flex;
@@ -104,7 +117,7 @@
     .nav-menu{
         margin-top: 65px;
         z-index: 1000;
-        background: linear-gradient(137deg, rgba(240,241,17,0.8104283949908089) 0%, rgba(217,0,255,1) 100%);
+        background: linear-gradient(137deg, rgba(240,241,17,1) 0%, rgba(217,0,255,1) 100%);
         width: 100vw;
         height: 100vh;
         display: flex;
