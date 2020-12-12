@@ -117,7 +117,8 @@
     .nav-menu{
         margin-top: 65px;
         z-index: 1000;
-        background: linear-gradient(137deg, rgba(240,241,17,1) 0%, rgba(217,0,255,1) 100%);
+        /* background: linear-gradient(137deg, rgba(240,241,17,1) 0%, rgba(217,0,255,1) 100%); */
+        background: linear-gradient(137deg, rgba(243,0,255,1) 0%, rgba(17,63,241,0.9981034650188201) 100%);
         width: 100vw;
         height: 100vh;
         display: flex;
