@@ -1,9 +1,14 @@
 import {IoIosCart} from "react-icons/io";
-import '../general/navbar/navbar.css'
+import '../CartWidget/cartWidget.css';
+import '../general/navbar/navbar.css';
+
 
 const CartWidget = () => {
     return(
-        <IoIosCart className="cart"/>
+        <div className="navCart">
+            <IoIosCart className="cart"/>
+            <span>0</span>
+        </div>
     )
 }
 

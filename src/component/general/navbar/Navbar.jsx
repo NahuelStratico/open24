@@ -36,6 +36,7 @@ const Navbar = () => {
                     </div>
                     <CartWidget/>
                 </div>
+                
             </div>
             <div className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-item" onClick={showSidebar}>
