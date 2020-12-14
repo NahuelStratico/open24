@@ -13,4 +13,7 @@ li{
     .products{
         flex-direction: column;
     }
+    .products li{
+        margin-bottom: 1rem;
+    }
 }

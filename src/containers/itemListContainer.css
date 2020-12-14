@@ -1,0 +1,19 @@
+.conter-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+.conter-container button{
+    width: 30px;
+    padding: 1px 2px;
+}
+.conter-container span{
+    margin: 0 5px;
+}
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
