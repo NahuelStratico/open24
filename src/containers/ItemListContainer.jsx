@@ -1,7 +1,7 @@
 
 import {useState} from 'react'
 import '../containers/itemListContainer.css'
-const ItemListContainer = ({titulo, precio, stock}) => {
+const ItemListContainer = ({titulo, precio}) => {
 
     const [counter, setCounter] = useState(1);
 
@@ -29,9 +29,9 @@ const ItemListContainer = ({titulo, precio, stock}) => {
                 <span>{precio}</span>
             </article>
             <div className="conter-container">
-                <button onClick={() => rest()} className={counter <= 1 ? 'disabled' : ''}>-</button>
+                <button onClick={() => rest()} disabled={counter <= 1}>-</button>
                 <span>{counter}</span>
-                <button onClick={() => onAdd()} className={counter >= 5 ? 'disabled' : ''}>+</button>
+                <button onClick={() => onAdd()} disabled={counter >= 5}>+</button>
             </div>
             <button className="btn btn-outline-primary btn-block mt-4">Agregar al carrito</button>
         </>
