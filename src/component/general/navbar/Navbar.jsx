@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import '../navbar/navbar.css';
-import logo from '../../../assets/logo.png';
-import { IoIosCart, IoIosMenu } from "react-icons/io";
+import logo from '../../../assets/logoOpen.png';
+import { IoIosMenu } from "react-icons/io";
 import {Sidebar} from './Sidebar';
 import CartWidget from '../../CartWidget/CartWidget'
 
