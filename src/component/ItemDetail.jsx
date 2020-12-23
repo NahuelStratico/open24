@@ -1,10 +1,14 @@
 
-const ItemDetail = (img, description, precio) => {
+const ItemDetail = ({item}) => {
     return(
-        <>
-        <img src={img} alt=""/>
-        <p>{description}</p>
-        <span>{precio}</span>
+        <>  <div className="container">
+                <article className="d-flex flex-column justify-content-center align-items-center">
+                    <img src={item.img} alt="Descripcion del producto"/>
+                    <p>{item.description}</p>
+                    <span>{item.precio}</span>
+                    <button>Agregar al carrito</button>
+                </article>
+            </div>
         </>
     )
 }

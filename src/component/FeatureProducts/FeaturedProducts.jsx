@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import '../component/featureProducts.css'
-import ItemListContainer from '../containers/ItemListContainer'
+import ItemListContainer from '../../containers/ItemListContainer'
 
 const FeatureProducts = () => {
 
