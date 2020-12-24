@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
 
     const getProduct = new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve({
+            return resolve({
                 id:1,
                 nombre: 'Producto 1',
                 img:'http://placehold.it/350x400',

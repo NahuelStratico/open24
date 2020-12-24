@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import '../component/featureProducts.css'
+import '../FeatureProducts/featureProducts.css'
 import ItemListContainer from '../../containers/ItemListContainer'
 
 const FeatureProducts = () => {
@@ -29,7 +29,7 @@ const FeatureProducts = () => {
     const getProducts = new Promise( (resolve, reject) => {
         setTimeout( () => {
             resolve(productos);
-        }, 3000)
+        }, 2000)
     })
 
     useEffect(() => {

@@ -1,17 +1,25 @@
 import './app.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from './component/general/navbar/Navbar'
-import ItemDetailContainer from './containers/ItemDetailContainer'
-
+import {BrowserRouter, Switch,Route} from 'react-router-dom'
+import Home from './component/home/Home'
+import Drugstore from './component/drugstore/Drugstore'
 
 
 function App() {
 
   return (
-    <>
+    <BrowserRouter>
       <Navbar/>
-      <ItemDetailContainer/>
-    </>
+      <Switch>
+        <Route exact path="/">
+          <Home/>
+        </Route>
+        <Route path="/drugstore">
+          <Drugstore/>
+        </Route>
+      </Switch>    
+    </BrowserRouter>
   );
 }
 

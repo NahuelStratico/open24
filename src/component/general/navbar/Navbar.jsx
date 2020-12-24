@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 import '../navbar/navbar.css';
 import logo from '../../../assets/logoOpen.png';
 import { IoIosMenu } from "react-icons/io";
@@ -19,8 +20,8 @@ const Navbar = () => {
                 <div className="nav-container">
                     <nav className="navbar" >
                             <ul className="navbar-content">
-                                <li className="navbar-item"><a href="#" className="navbar-link link">Inicio</a></li>
-                                <li className="navbar-item"><a href="#" className="navbar-link link">Drugstore</a></li>
+                                <li className="navbar-item"><Link to="/" className="navbar-link link">Inicio</Link></li>
+                                <li className="navbar-item"><Link to="/drugstore" className="navbar-link link">Drugstore</Link></li>
                                 <li className="navbar-item"><a href="#" className="navbar-link link">Helados & Drinks</a></li>
                                 <li className="navbar-item"><a href="#" className="navbar-link link">Tabaquería & Grow Shop</a></li>
                                 <li className="navbar-item"><a href="#" className="navbar-link link">Deco & Energética</a></li>
