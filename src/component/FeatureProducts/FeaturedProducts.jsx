@@ -1,40 +1,31 @@
 import {useState, useEffect} from 'react'
 import '../FeatureProducts/featureProducts.css'
+import {listaProductos} from '../../assets/listaProductos'
 import ItemListContainer from '../../containers/ItemListContainer'
+import {useParams} from 'react-router-dom';
 
 const FeatureProducts = () => {
 
     const [products, setProducts] = useState([])
 
-    // Simulando API
-    const productos = [
-        {
-            id:1,
-            titulo: 'Producto1',
-            precio: 500
-
-        },
-        {
-            id:2,
-            titulo: 'Producto2',
-            precio: 1400
-        },
-        {
-            id:3,
-            titulo: 'Producto3',
-            precio: 100
-        }
-    ]
+    const {categoryid} = useParams()
 
     const getProducts = new Promise( (resolve, reject) => {
         setTimeout( () => {
-            resolve(productos);
-        }, 2000)
+            resolve(listaProductos);
+        }, 500)
     })
 
     useEffect(() => {
-        getProducts.then( res => setProducts(res))
-    },[])
+        getProducts.then( res => {
+            if(categoryid){
+                const productoCategory = res.filter( producto => producto.categoria === categoryid)
+                setProducts(productoCategory)
+            }else{
+                setProducts(res)
+            }
+        })
+    },[categoryid])
 
 
 
@@ -46,15 +37,16 @@ const FeatureProducts = () => {
                     products.length ?
                     <>
 
-                        <h2 className="pb-3">Productos destacados</h2>
-
+                        
+                        <h2 className="pb-3">Quiero poner este titulo dinamico y no me salio</h2>
+                        
+                        
                         <ul className="container products">
                             {
                                 products.map((item, index) => (
                                     <li key={index}>
                                         <ItemListContainer 
-                                            titulo={item.titulo}
-                                            precio={item.precio}
+                                            item={item}
                                         />
                                     </li>
                                 ))

@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from './component/general/navbar/Navbar'
 import {BrowserRouter, Switch,Route} from 'react-router-dom'
 import Home from './component/home/Home'
-import Drugstore from './component/drugstore/Drugstore'
+import FeatureProducts from './component/FeatureProducts/FeaturedProducts'
+import ItemDetailContainer from './containers/ItemDetailContainer'
 
 
 function App() {
@@ -15,8 +16,11 @@ function App() {
         <Route exact path="/">
           <Home/>
         </Route>
-        <Route path="/drugstore">
-          <Drugstore/>
+        <Route exact path="/category/:categoryid">
+          <Home/>
+        </Route>
+        <Route exact path="/item/:itemid">
+          <ItemDetailContainer/>
         </Route>
       </Switch>    
     </BrowserRouter>

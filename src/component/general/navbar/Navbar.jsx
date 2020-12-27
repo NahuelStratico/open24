@@ -15,19 +15,21 @@ const Navbar = () => {
        <>
        <header className="header">
             <div className="container">
-                <img src={logo} alt="Logo 24/7" className="logo"/>
+                <Link to="/" >
+                    <img src={logo} alt="Logo 24/7" className="logo"/>
+                </Link>
 
                 <div className="nav-container">
                     <nav className="navbar" >
                             <ul className="navbar-content">
                                 <li className="navbar-item"><Link to="/" className="navbar-link link">Inicio</Link></li>
-                                <li className="navbar-item"><Link to="/drugstore" className="navbar-link link">Drugstore</Link></li>
-                                <li className="navbar-item"><a href="#" className="navbar-link link">Helados & Drinks</a></li>
-                                <li className="navbar-item"><a href="#" className="navbar-link link">Tabaquería & Grow Shop</a></li>
-                                <li className="navbar-item"><a href="#" className="navbar-link link">Deco & Energética</a></li>
-                                <li className="navbar-item"><a href="#" className="navbar-link link">Librería & Tecno</a></li>
-                                <li className="navbar-item"><a href="#" className="navbar-link link">Despensa & Snacks</a></li>
-                                <li className="navbar-item"><a href="#" className="navbar-link link">Juguetería & Regalería</a></li>
+                                <li className="navbar-item"><Link to="/category/drugstore" className="navbar-link link">Drugstore</Link></li>
+                                <li className="navbar-item"><Link to="/category/heladosydrinks" className="navbar-link link">Helados & Drinks</Link></li>
+                                <li className="navbar-item"><Link to="/category/tabaqueriaygrow" className="navbar-link link">Tabaquería & Grow Shop</Link></li>
+                                <li className="navbar-item"><Link to="/category/decoyenergetica" className="navbar-link link">Deco & Energética</Link></li>
+                                <li className="navbar-item"><Link to="/category/libreriaytecno" className="navbar-link link">Librería & Tecno</Link></li>
+                                <li className="navbar-item"><Link to="/category/almacenysnack" className="navbar-link link">Almacén & Snacks</Link></li>
+                                <li className="navbar-item"><Link to="/category/jugueteriayrelagos" className="navbar-link link">Juguetería & Regalería</Link></li>
                             </ul>                    
                     </nav>
                     <div className="hamburger-nav">
