@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from './component/general/navbar/Navbar'
 import {BrowserRouter, Switch,Route} from 'react-router-dom'
 import Home from './component/home/Home'
-import FeatureProducts from './component/FeatureProducts/FeaturedProducts'
 import ItemDetailContainer from './containers/ItemDetailContainer'
 
 

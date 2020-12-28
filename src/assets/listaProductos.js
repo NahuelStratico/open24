@@ -4,7 +4,7 @@ export const listaProductos = [
         nombre:'Gomitas',
         descripcion:'Estas son gomitas',
         precio: 250,
-        img:'http://placehold.it/350x400',
+        img:'https://picsum.photos/200/300',
         categoria:'drugstore'
     },
     {
