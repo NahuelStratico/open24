@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
+import {Redirect, useParams} from 'react-router-dom';
 import {listaProductos} from '../assets/listaProductos';
 import ItemDetail from '../component/ItemDetail';
 
@@ -23,12 +23,17 @@ const ItemDetailContainer = () => {
         .catch(err => console.log(err));
     }, []);
 
+    // Funcion que retorna al carrito
+    const addCart = () => {
+        console.log('agregado al carrito');
+        return <Redirect to="/cart" />
+    }
 
     return(
         <>
             {
                 product ?
-                <ItemDetail item={product}/>
+                <ItemDetail item={product} action={addCart}/>
                 :
                 <p>Cargando producto...</p>
             }

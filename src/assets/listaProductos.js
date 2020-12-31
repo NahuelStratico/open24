@@ -12,7 +12,7 @@ export const listaProductos = [
         nombre:'Beldent',
         descripcion:'Estas son Chicles Beldent',
         precio: 150,
-        img:'http://placehold.it/350x400',
+        img:'https://picsum.photos/200/300',
         categoria:'drugstore'
     },
     {
@@ -20,7 +20,7 @@ export const listaProductos = [
         nombre:'Caramelos',
         descripcion:'Estas son Caramelos',
         precio: 50,
-        img:'http://placehold.it/350x400',
+        img:'https://picsum.photos/200/300',
         categoria:'drugstore'
     },
     {
@@ -28,7 +28,7 @@ export const listaProductos = [
         nombre:'Helado',
         descripcion:'Es un Helado',
         precio: 200,
-        img:'http://placehold.it/350x400',
+        img:'https://picsum.photos/200/300',
         categoria:'heladosydrinks'
     },
     {
@@ -36,7 +36,7 @@ export const listaProductos = [
         nombre:'habano',
         descripcion:'Esto es un habano',
         precio: 250,
-        img:'http://placehold.it/350x400',
+        img:'https://picsum.photos/200/300',
         categoria:'tabaqueriaygrow'
     },
     {
@@ -44,7 +44,7 @@ export const listaProductos = [
         nombre:'Deco',
         descripcion:'Decoración',
         precio: 500,
-        img:'http://placehold.it/350x400',
+        img:'https://picsum.photos/200/300',
         categoria:'decoyenergetica'
     },
     {
@@ -52,7 +52,7 @@ export const listaProductos = [
         nombre:'Cuaderno',
         descripcion:'Esto es un cuaderno',
         precio: 300,
-        img:'http://placehold.it/350x400',
+        img:'https://picsum.photos/200/300',
         categoria:'libreriaytecno'
     },
     {
@@ -60,7 +60,7 @@ export const listaProductos = [
         nombre:'Yerba mate',
         descripcion:'yerba para mate',
         precio: 300,
-        img:'http://placehold.it/350x400',
+        img:'https://picsum.photos/200/300',
         categoria:'almacenysnack'
     },
     {
@@ -68,7 +68,7 @@ export const listaProductos = [
         nombre:'Rompecabezas',
         descripcion:'Esto es un rompe cabezas',
         precio: 300,
-        img:'http://placehold.it/350x400',
+        img:'https://picsum.photos/200/300',
         categoria:'jugueteriayrelagos'
     }
 ]

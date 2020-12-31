@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({item, action}) => {
 
     
     const [counter, setCounter] = useState(1);
@@ -29,12 +29,20 @@ const ItemDetail = ({item}) => {
                     <span>{item.descripcion}</span>
                     <span>{item.precio}</span>
                     <div className="conter-container">
-                    <button onClick={() => rest()} disabled={counter <= 1}>-</button>
-                    <span>{counter}</span>
-                    <button onClick={() => onAdd()} disabled={counter >= 5}>+</button>
-                </div>
-                    <button>Agregar al carrito</button>
+                        <button onClick={() => rest()} disabled={counter <= 1}>-</button>
+                        <span>{counter}</span>
+                        <button onClick={() => onAdd()} disabled={counter >= 5}>+</button>
+                    </div>
+                    <button onClick={action}>Agregar al carrito</button>
+
+                   {/* alert que sale cuando agregan al carrito */}
+                    <div className={action? 'alert alert-success': 'd-none'} role="alert">
+                        Producto agregado al carrito
+                    </div>
+                    
+
                 </article>
+               
             </div>
         </>
     )
