@@ -6,7 +6,7 @@ import ItemDetail from '../component/ItemDetail';
 
 const ItemDetailContainer = () => {
 
-    const [product, setProduct] = useState(null);
+    const [product, setProduct] = useState(null); 
 
     const {itemid} = useParams()
 
@@ -23,17 +23,14 @@ const ItemDetailContainer = () => {
         .catch(err => console.log(err));
     }, []);
 
-    // Funcion que retorna al carrito
-    const addCart = () => {
-        console.log('agregado al carrito');
-        return <Redirect to="/cart" />
-    }
+    
+
 
     return(
         <>
             {
                 product ?
-                <ItemDetail item={product} action={addCart}/>
+                <ItemDetail item={product} />
                 :
                 <p>Cargando producto...</p>
             }

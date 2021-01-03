@@ -1,9 +1,20 @@
 import {useState} from 'react';
+import {Redirect} from 'react-router-dom';
 
-const ItemDetail = ({item, action}) => {
 
+const ItemDetail = ({item}) => {
     
     const [counter, setCounter] = useState(1);
+
+    const [redirect, setRedirect] = useState(false); 
+
+    function addCart(){
+        alert('Producto agregado al carrito')
+        setTimeout(() => {
+            setRedirect(true)
+        }, 2000);
+        
+    }
 
     function onAdd(){
         if(counter >= 5){
@@ -33,10 +44,13 @@ const ItemDetail = ({item, action}) => {
                         <span>{counter}</span>
                         <button onClick={() => onAdd()} disabled={counter >= 5}>+</button>
                     </div>
-                    <button onClick={action}>Agregar al carrito</button>
+                    <button onClick={addCart}>Agregar al carrito</button>
+                   {
+                         redirect && <Redirect to="/cart"/>
+                   }
 
                    {/* alert que sale cuando agregan al carrito */}
-                    <div className={action? 'alert alert-success': 'd-none'} role="alert">
+                    <div className={redirect ? 'alert alert-success' : 'd-none' } role="alert">
                         Producto agregado al carrito
                     </div>
                     
