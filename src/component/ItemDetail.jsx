@@ -1,19 +1,26 @@
 import {useState} from 'react';
 import {Redirect} from 'react-router-dom';
+import Swal from 'sweetalert2'
 
 
 const ItemDetail = ({item}) => {
     
     const [counter, setCounter] = useState(1);
+    const [redirect, setRedirect] = useState(false);
+    const [message, setMessage] = useState("")
 
-    const [redirect, setRedirect] = useState(false); 
-
-    function addCart(){
-        alert('Producto agregado al carrito')
+     function addCart(){
+        setMessage(Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Excelente',
+            text: "Tu producto fue agregado al carrito",
+            showConfirmButton: false,
+            timer: 2000
+          }))
         setTimeout(() => {
             setRedirect(true)
-        }, 2000);
-        
+        }, 2500);  
     }
 
     function onAdd(){
@@ -44,10 +51,11 @@ const ItemDetail = ({item}) => {
                         <span>{counter}</span>
                         <button onClick={() => onAdd()} disabled={counter >= 5}>+</button>
                     </div>
-                    <button onClick={addCart}>Agregar al carrito</button>
-                   {
-                         redirect && <Redirect to="/cart"/>
-                   }
+                    <button onClick={() => addCart()}>Agregar al carrito</button>
+
+                   { redirect && <Redirect to="/cart"/> }
+
+                   
 
                    {/* alert que sale cuando agregan al carrito */}
                     <div className={redirect ? 'alert alert-success' : 'd-none' } role="alert">

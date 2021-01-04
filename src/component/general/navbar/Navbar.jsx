@@ -37,7 +37,7 @@ const Navbar = () => {
                         <IoIosMenu onClick={showSidebar}/>
                         </a>
                     </div>
-                    <CartWidget/>
+                   <Link to="/cart"><CartWidget/></Link> 
                 </div>
                 
             </div>

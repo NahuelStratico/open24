@@ -7,6 +7,7 @@ import ItemDetail from '../component/ItemDetail';
 const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState(null); 
+    // const [redirect, setRedirect] = useState(false);
 
     const {itemid} = useParams()
 
@@ -24,6 +25,13 @@ const ItemDetailContainer = () => {
     }, []);
 
     
+
+    //function addCart(){
+      //  alert('Producto agregado al carrito')
+        //setTimeout(() => {
+          //  setRedirect(true)
+        //}, 2000);  
+    //}
 
 
     return(
