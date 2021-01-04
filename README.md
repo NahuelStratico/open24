@@ -1,12 +1,10 @@
-# Getting Started with Create React App
+# Ecommerce de Open 24/7, una cadena de comercios orientados a drugstore y servicios.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Para correr la app: 
 
-In the project directory, you can run:
-
-### `yarn start`
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
