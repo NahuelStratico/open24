@@ -43,6 +43,7 @@ const ItemDetail = ({item}) => {
         <>  
             <div className="container">
                 <article className="d-flex flex-column justify-content-center align-items-center">
+                    
                     <img src={item.img} alt="Descripcion del producto"/>
                     <span>{item.descripcion}</span>
                     <span>{item.precio}</span>
@@ -53,15 +54,7 @@ const ItemDetail = ({item}) => {
                     </div>
                     <button onClick={() => addCart()}>Agregar al carrito</button>
 
-                   { redirect && <Redirect to="/cart"/> }
-
-                   
-
-                   {/* alert que sale cuando agregan al carrito */}
-                    <div className={redirect ? 'alert alert-success' : 'd-none' } role="alert">
-                        Producto agregado al carrito
-                    </div>
-                    
+                   { redirect && <Redirect to="/cart"/> }                    
 
                 </article>
                
