@@ -33,9 +33,9 @@ const Navbar = () => {
                             </ul>                    
                     </nav>
                     <div className="hamburger-nav">
-                        <a href="#" className="menu-bars">
+                        <Link to="#" className="menu-bars">
                         <IoIosMenu onClick={showSidebar}/>
-                        </a>
+                        </Link>
                     </div>
                    <Link to="/cart"><CartWidget/></Link> 
                 </div>
@@ -43,12 +43,12 @@ const Navbar = () => {
             </div>
             <div className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className="nav-menu-item" onClick={showSidebar}>
-                   {Sidebar.map((item, index) => {
+                   {Sidebar.map((menu, index) => {
                        return(
-                        <li key={index} className={item.cName}>
-                            <a href={item.url}>
-                                <span>{item.title}</span>
-                            </a>
+                        <li key={index} className={menu.cName}>
+                            <Link to={menu.url}>
+                                <span>{menu.title}</span>
+                            </Link>
                         </li>
                        )
                    })}

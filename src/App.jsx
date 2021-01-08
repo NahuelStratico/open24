@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import './app.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from './component/general/navbar/Navbar'
@@ -5,12 +6,20 @@ import {BrowserRouter, Switch,Route} from 'react-router-dom'
 import Home from './component/home/Home'
 import ItemDetailContainer from './containers/ItemDetailContainer'
 import ItemCartContainer from './containers/ItemCartContainer'
+import {Store} from '../src/store/index'
 
 
 function App() {
 
+  const [data, setData] = useState({
+    items:[],
+    cantidad:0
+  })
+
   return (
-    <BrowserRouter>
+
+    <Store.Provider value={[data, setData]}>
+      <BrowserRouter>
       <Navbar/>
       <Switch>
         <Route exact path="/">
@@ -27,6 +36,7 @@ function App() {
         </Route>
       </Switch>    
     </BrowserRouter>
+    </Store.Provider>
   );
 }
 

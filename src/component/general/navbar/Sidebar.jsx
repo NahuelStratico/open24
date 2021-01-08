@@ -1,42 +1,42 @@
 export const Sidebar = [
     {
         title:'Inicio',
-        url:'#',
+        url:'/',
         cName:'nav-text'
     },
     {
         title:'Drugstore',
-        url:'#',
+        url:'/category/drugstore',
         cName:'nav-text'
     },
     {
         title:'Helados & Drinks',
-        url:'#',
+        url:'/category/heladosydrinks',
         cName:'nav-text'
     },
     {
         title:'Tabaquería & Grow Shop',
-        url:'#',
+        url:'/category/tabaqueriaygrow',
         cName:'nav-text'
     },
     {
         title:'Deco & Energética',
-        url:'#',
+        url:'/category/decoyenergetica',
         cName:'nav-text'
     },
     {
         title:'Librería & Tecno',
-        url:'#',
+        url:'/category/libreriaytecno',
         cName:'nav-text'
     },
     {
         title:'Despensa & Snacks',
-        url:'#',
+        url:'/category/almacenysnack',
         cName:'nav-text'
     },
     {
         title:'Juguetería & Regalería',
-        url:'#',
+        url:'/category/jugueteriayrelagos',
         cName:'nav-text'
     },
 ]

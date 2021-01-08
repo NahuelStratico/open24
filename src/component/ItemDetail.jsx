@@ -1,27 +1,37 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {Redirect} from 'react-router-dom';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import {Store} from '../store';
 
 
 const ItemDetail = ({item}) => {
-    
+    const [data, setData] = useContext(Store);
     const [counter, setCounter] = useState(1);
     const [redirect, setRedirect] = useState(false);
     const [message, setMessage] = useState("")
 
+
      function addCart(){
-        setMessage(Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Excelente',
-            text: "Tu producto fue agregado al carrito",
-            showConfirmButton: false,
-            timer: 2000
-          }))
-        setTimeout(() => {
-            setRedirect(true)
-        }, 2500);  
+        setData(
+            {...data,
+            cantidad: data.cantidad + counter,
+            items: [...data.items, item]
+        }
+        )
+        // setMessage(Swal.fire({
+        //     position: 'center',
+        //     icon: 'success',
+        //     title: 'Producto agregado',
+        //     text: "Tu producto fue agregado al carrito",
+        //     showConfirmButton: false,
+        //     timer: 2000
+        //   }))
+        // setTimeout(() => {
+        //     setRedirect(true)
+        // }, 2500);  
     }
+
+    console.log(data);
 
     function onAdd(){
         if(counter >= 5){
@@ -43,7 +53,7 @@ const ItemDetail = ({item}) => {
         <>  
             <div className="container">
                 <article className="d-flex flex-column justify-content-center align-items-center">
-                    
+
                     <img src={item.img} alt="Descripcion del producto"/>
                     <span>{item.descripcion}</span>
                     <span>{item.precio}</span>

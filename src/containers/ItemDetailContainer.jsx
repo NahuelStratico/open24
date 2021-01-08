@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {Redirect, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {listaProductos} from '../assets/listaProductos';
 import ItemDetail from '../component/ItemDetail';
 
@@ -7,7 +7,6 @@ import ItemDetail from '../component/ItemDetail';
 const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState(null); 
-    // const [redirect, setRedirect] = useState(false);
 
     const {itemid} = useParams()
 
@@ -25,15 +24,6 @@ const ItemDetailContainer = () => {
     }, []);
 
     
-
-    //function addCart(){
-      //  alert('Producto agregado al carrito')
-        //setTimeout(() => {
-          //  setRedirect(true)
-        //}, 2000);  
-    //}
-
-
     return(
         <>
             {
