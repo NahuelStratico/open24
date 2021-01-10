@@ -2,6 +2,7 @@ import {useState, useContext} from 'react';
 import {Redirect} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import {Store} from '../store';
+import '../component/detail.css'
 
 
 const ItemDetail = ({item}) => {
@@ -11,13 +12,26 @@ const ItemDetail = ({item}) => {
     const [message, setMessage] = useState("")
 
 
-     function addCart(){
-        setData(
-            {...data,
-            cantidad: data.cantidad + counter,
-            items: [...data.items, item]
+     function addCart(id){
+         const check = data.items.every(item => {
+             return item.id !== id
+         })
+         console.log(check)
+         if(check){
+             data.items.filter(product => {
+                 return product.id === id
+             })
+             setData(
+                {...data,
+                cantidad: data.cantidad + counter,
+                items: [...data.items, item]
+               }
+           )
+            
+        }else{
+            alert('El producto ya fue agregado al carrito')
         }
-        )
+       
         // setMessage(Swal.fire({
         //     position: 'center',
         //     icon: 'success',
@@ -32,6 +46,7 @@ const ItemDetail = ({item}) => {
     }
 
     console.log(data);
+
 
     function onAdd(){
         if(counter >= 5){
@@ -52,22 +67,25 @@ const ItemDetail = ({item}) => {
     return(
         <>  
             <div className="container">
-                <article className="d-flex flex-column justify-content-center align-items-center">
-
-                    <img src={item.img} alt="Descripcion del producto"/>
-                    <span>{item.descripcion}</span>
-                    <span>{item.precio}</span>
-                    <div className="conter-container">
-                        <button onClick={() => rest()} disabled={counter <= 1}>-</button>
-                        <span>{counter}</span>
-                        <button onClick={() => onAdd()} disabled={counter >= 5}>+</button>
+                <article className="detail">
+                    <img src={item.img} alt={item.descripcion} className="img-detail"/>
+                    <div className="descripcion-container">
+                        <div className="title-container">
+                            <h2>{item.nombre}</h2>
+                            <span>${item.precio}</span>
+                        </div>
+                        <p>{item.descripcion}</p>
+                        <p>{item.content}</p>
+                        <div className="conter-container">
+                            <button onClick={() => rest()} disabled={counter <= 1}>-</button>
+                            <span>{counter}</span>
+                            <button onClick={() => onAdd()} disabled={counter >= 5}>+</button>
+                        </div>
+                        <button onClick={() => addCart(item.id)} className="btn-cart">Agregar al carrito</button>
                     </div>
-                    <button onClick={() => addCart()}>Agregar al carrito</button>
 
                    { redirect && <Redirect to="/cart"/> }                    
-
-                </article>
-               
+                </article> 
             </div>
         </>
     )

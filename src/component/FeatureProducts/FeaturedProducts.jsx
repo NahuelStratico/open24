@@ -44,7 +44,7 @@ const FeatureProducts = () => {
                         <ul className="container products">
                             {
                                 products.map((item, index) => (
-                                    <li key={index}>
+                                    <li key={index} className="card-ui">
                                         <ItemListContainer 
                                             item={item}
                                         />

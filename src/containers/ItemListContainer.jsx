@@ -5,12 +5,13 @@ const ItemListContainer = ({item}) => {
 
     return(
         <>
-            <Link to={`/item/${item.id}`}>
-                <article className="d-flex flex-column text-center">
-                    <img src={item.img} alt="imagen del producto"/>
+            <Link to={`/item/${item.id}`} className="link">
+                <article className="d-flex flex-column text-start">
+                    <img src={item.img} alt="imagen del producto" className="card-image"/>
                     <h3>{item.nombre}</h3>
-                    <span>{item.precio}</span>
-                    <button className="btn btn-outline-primary btn-block mt-4">Ver más</button>
+                    <span className="precio">${item.precio}</span>
+                    <p className="descripcion-product">{item.descripcion}</p>
+                    <button className="btn-container">Agregar al carrito</button>
                 </article>
             </Link>
         </>
