@@ -7,13 +7,14 @@ import Home from './component/home/Home'
 import ItemDetailContainer from './containers/ItemDetailContainer'
 import ItemCartContainer from './containers/ItemCartContainer'
 import {Store} from '../src/store/index'
-
+import CheckOut from './component/CartWidget/CheckOut'
 
 function App() {
 
   const [data, setData] = useState({
     items:[],
-    cantidad:0
+    cantidad:0,
+    total:0
   })
 
   return (
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route exact path="/cart">
           <ItemCartContainer/>
+        </Route>
+        <Route>
+          <CheckOut exact path="/checkout"/>
         </Route>
       </Switch>    
     </BrowserRouter>

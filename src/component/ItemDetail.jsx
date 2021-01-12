@@ -11,12 +11,12 @@ const ItemDetail = ({item}) => {
     const [redirect, setRedirect] = useState(false);
     const [message, setMessage] = useState("")
 
-
+    // Funcion agregar al carrito
      function addCart(id){
          const check = data.items.every(item => {
              return item.id !== id
          })
-         console.log(check)
+
          if(check){
              data.items.filter(product => {
                  return product.id === id
@@ -26,8 +26,7 @@ const ItemDetail = ({item}) => {
                 cantidad: data.cantidad + counter,
                 items: [...data.items, item]
                }
-           )
-            
+           )   
         }else{
             alert('El producto ya fue agregado al carrito')
         }
@@ -45,9 +44,7 @@ const ItemDetail = ({item}) => {
         // }, 2500);  
     }
 
-    console.log(data);
-
-
+    // Funcion contador sumar
     function onAdd(){
         if(counter >= 5){
             alert('Llegaste al limite del Stock')
@@ -55,7 +52,7 @@ const ItemDetail = ({item}) => {
             setCounter(counter + 1)
         }
     }
-
+    // Funcion contador restar
     function rest(){
         if(counter <= 1){
             alert('Llegaste al minimo de stock')

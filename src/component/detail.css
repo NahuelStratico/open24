@@ -1,17 +1,20 @@
 .detail{
-  width: 100%;
+  width: 90%;
   height: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   margin: 50px 0;
+  box-shadow: 0px 0px 5px 0px rgba(79,79,79,0.83);
+-webkit-box-shadow: 0px 0px 5px 0px rgba(79,79,79,0.83);
+-moz-box-shadow: 0px 0px 5px 0px rgba(79,79,79,0.83);
 }
 .img-detail{
     max-width: 500px;
     min-width: 290px;
     height: 400px;
-    /* width: 100%; */
+    padding: 20px 0;
     display: block;
     object-fit: cover;
     border-radius: 4px;
@@ -61,6 +64,8 @@
 .conter-container span{
     margin: 0 10px;
 }
+
+
 button:disabled,
 button[disabled]{
   border: 1px solid #999999;
