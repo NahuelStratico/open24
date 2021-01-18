@@ -33,7 +33,7 @@ export const listaProductos = [
         content:'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting',
         precio: 200,
         img:'https://picsum.photos/200/300',
-        categoria:'heladosydrinks'
+        categoria:'helados-y-drinks'
     },
     {
         id:5,
@@ -42,7 +42,7 @@ export const listaProductos = [
         content:'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting',
         precio: 250,
         img:'https://picsum.photos/200/300',
-        categoria:'tabaqueriaygrow'
+        categoria:'tabaqueria-y-grow'
     },
     {
         id:6,
@@ -51,7 +51,7 @@ export const listaProductos = [
         content:'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting',
         precio: 500,
         img:'https://picsum.photos/200/300',
-        categoria:'decoyenergetica'
+        categoria:'deco-y-energetica'
     },
     {
         id:7,
@@ -60,7 +60,7 @@ export const listaProductos = [
         content:'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting',
         precio: 300,
         img:'https://picsum.photos/200/300',
-        categoria:'libreriaytecno'
+        categoria:'libreria-y-tecno'
     },
     {
         id:8,
@@ -69,7 +69,7 @@ export const listaProductos = [
         content:'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting',
         precio: 300,
         img:'https://picsum.photos/200/300',
-        categoria:'almacenysnack'
+        categoria:'almacen-y-snack'
     },
     {
         id:9,
@@ -78,6 +78,6 @@ export const listaProductos = [
         content:'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting',
         precio: 300,
         img:'https://picsum.photos/200/300',
-        categoria:'jugueteriayrelagos'
+        categoria:'jugueteria-y-relagos'
     }
 ]

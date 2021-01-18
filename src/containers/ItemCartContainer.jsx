@@ -45,8 +45,6 @@ const ItemCartContainer = () => {
     }
 
     
-
-
     if(data.cantidad === 0){
         return <div className="cart-empty">
                     <h2>Carrito vacio</h2>

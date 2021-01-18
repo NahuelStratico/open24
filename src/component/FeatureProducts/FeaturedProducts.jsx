@@ -38,7 +38,7 @@ const FeatureProducts = () => {
                     <>
 
                         
-                        <h2 className="pb-3">Quiero poner este titulo dinamico y no me salio</h2>
+                        <h2 className="pb-3">{categoryid}</h2>
                         
                         
                         <ul className="container products">

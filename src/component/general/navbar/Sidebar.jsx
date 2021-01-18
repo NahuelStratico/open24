@@ -11,32 +11,32 @@ export const Sidebar = [
     },
     {
         title:'Helados & Drinks',
-        url:'/category/heladosydrinks',
+        url:'/category/helados-y-drinks',
         cName:'nav-text'
     },
     {
         title:'Tabaquería & Grow Shop',
-        url:'/category/tabaqueriaygrow',
+        url:'/category/tabaqueria-y-grow',
         cName:'nav-text'
     },
     {
         title:'Deco & Energética',
-        url:'/category/decoyenergetica',
+        url:'/category/deco-y-energetica',
         cName:'nav-text'
     },
     {
         title:'Librería & Tecno',
-        url:'/category/libreriaytecno',
+        url:'/category/libreria-y-tecno',
         cName:'nav-text'
     },
     {
         title:'Despensa & Snacks',
-        url:'/category/almacenysnack',
+        url:'/category/almacen-y-snack',
         cName:'nav-text'
     },
     {
         title:'Juguetería & Regalería',
-        url:'/category/jugueteriayrelagos',
+        url:'/category/jugueteria-y-relagos',
         cName:'nav-text'
     },
 ]
