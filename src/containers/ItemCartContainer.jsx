@@ -61,7 +61,7 @@ const ItemCartContainer = () => {
                         data.items.map(item => (
                             <div className="container detail-container">
                                 <article className="detail cart-container">
-                                    <img src={item.img} alt={item.descripcion} className="img-detail"/>
+                                    <img src={`/products/${item.img}`} alt={item.descripcion} className="img-detail"/>
                                     <div className="descripcion-container">
                                         <div className="title-container">
                                             <h2>{item.nombre}</h2>

@@ -99,7 +99,7 @@ productos.forEach((obj) => {
       .add({
         id: obj.id,
         titulo: obj.titulo,
-        description: obj.description,
+        descripcion: obj.descripcion,
         content: obj.content,
         precio: obj.precio,
         img: obj.img,

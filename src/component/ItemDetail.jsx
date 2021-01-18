@@ -65,10 +65,10 @@ const ItemDetail = ({item}) => {
         <>  
             <div className="container">
                 <article className="detail">
-                    <img src={item.img} alt={item.descripcion} className="img-detail"/>
+                    <img src={`/products/${item.img}`} alt={item.descripcion} className="img-detail"/>
                     <div className="descripcion-container">
                         <div className="title-container">
-                            <h2>{item.nombre}</h2>
+                            <h2>{item.titulo}</h2>
                             <span>${item.precio}</span>
                         </div>
                         <p>{item.descripcion}</p>
