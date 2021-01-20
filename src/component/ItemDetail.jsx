@@ -24,7 +24,8 @@ const ItemDetail = ({item}) => {
              setData(
                 {...data,
                 cantidad: data.cantidad + counter,
-                items: [...data.items, item]
+                items: [...data.items, item],
+                total: data.total + (item.precio * counter)
                }
            )   
         }else{
@@ -52,6 +53,7 @@ const ItemDetail = ({item}) => {
             setCounter(counter + 1)
         }
     }
+    
     // Funcion contador restar
     function rest(){
         if(counter <= 1){
@@ -69,7 +71,7 @@ const ItemDetail = ({item}) => {
                     <div className="descripcion-container">
                         <div className="title-container">
                             <h2>{item.titulo}</h2>
-                            <span>${item.precio}</span>
+                            <span>${item.precio * counter}</span>
                         </div>
                         <p>{item.descripcion}</p>
                         <p>{item.content}</p>

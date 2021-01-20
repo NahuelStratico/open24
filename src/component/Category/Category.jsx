@@ -1,11 +1,11 @@
 import {useState, useEffect} from 'react';
-import '../FeatureProducts/featureProducts.css';
+import './category.css';
 // import {listaProductos} from '../../assets/listaProductos'
 import ItemListContainer from '../../containers/ItemListContainer';
 import {useParams} from 'react-router-dom';
 import {getFirestore} from '../../firebase/index';
 
-const FeatureProducts = () => {
+const Category = () => {
 
     const [products, setProducts] = useState([])
     const db = getFirestore();
@@ -59,15 +59,18 @@ const FeatureProducts = () => {
     return(
         <>
             <div className="container my-4 d-flex flex-column">
+                {
+                   categoryid === undefined ?
+                   <h2 className="pb-3">Productos destacados</h2>
+                   :
+                   <h2 className="pb-3">{categoryid.split('-').join(' ').toUpperCase()}</h2>
+                }
+                            
 
                 {
                     products.length ?
                     <>
 
-                        
-                        <h2 className="pb-3">{categoryid}</h2>
-                        
-                        
                         <ul className="container products">
                             {
                                 products.map((item, index) => (
@@ -98,4 +101,4 @@ const FeatureProducts = () => {
     )
 }
 
-export default FeatureProducts
+export default Category

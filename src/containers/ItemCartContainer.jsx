@@ -2,7 +2,6 @@
 import {useContext, useState} from 'react';
 import {Store} from '../store';
 import {Link} from 'react-router-dom'
-import CartCounter from '../component/CartWidget/CartCounter'
 import '../component/CartWidget/cartWidget.css'
 
 
@@ -13,6 +12,8 @@ const ItemCartContainer = () => {
 
     // Funcion eliminar item del carrito
     const deleteItem = id => {
+        const prod = data.items.find((prod) => prod.id === id);
+
         if(window.confirm('¿Querés eliminar el producto del carrito?')){
             data.items.forEach((item, index) => {
                  if(item.id === id) {
@@ -21,7 +22,8 @@ const ItemCartContainer = () => {
              })
              setData({...data,
                  cantidad: data.cantidad -1,
-                 items: [...data.items]
+                 items: [...data.items],
+                 total: data.total - (prod.precio * counter)
              });
         }
     }

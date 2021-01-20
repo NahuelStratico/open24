@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
     const {itemid} = useParams()
     const db = getFirestore()
 
-    const getProductsFromDB = () => {
+    const getProductsDB = () => {
         db.collection('productos').doc(itemid).get()
         .then(doc => {
             if(doc.exists) {
@@ -29,7 +29,7 @@ const ItemDetailContainer = () => {
     // })
 
      useEffect(() => {
-        getProductsFromDB()
+        getProductsDB()
     //     getProduct
     //     .then(response => setProduct(response))
     //     .catch(err => console.log(err));

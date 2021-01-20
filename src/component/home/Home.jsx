@@ -1,8 +1,8 @@
-import FeatureProducts from '../FeatureProducts/FeaturedProducts'
+import PromoProducts from '../PromoProducts/PromoProducts'
 
 const Home = () => {
     return(
-        <FeatureProducts />
+        <PromoProducts />
     )
 }
 
