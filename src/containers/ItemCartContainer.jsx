@@ -60,9 +60,10 @@ const ItemCartContainer = () => {
                     <h3 className="text-center mt-5">Detalle de tu compra:</h3>
     
                     {
+                        
                         data.items.map(item => (
                             <div className="container detail-container">
-                                <article className="detail cart-container">
+                               <article className="detail cart-container">
                                     <img src={`/products/${item.img}`} alt={item.descripcion} className="img-detail"/>
                                     <div className="descripcion-container">
                                         <div className="title-container">
