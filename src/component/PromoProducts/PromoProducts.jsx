@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
 import {getFirestore} from '../../firebase/index'
-import {Link} from 'react-router-dom'
 import ItemListContainer from '../../containers/ItemListContainer'
 
 const PromoProducts = () => {

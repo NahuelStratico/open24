@@ -7,7 +7,7 @@ import Home from './component/home/Home'
 import ItemDetailContainer from './containers/ItemDetailContainer'
 import ItemCartContainer from './containers/ItemCartContainer'
 import {Store} from '../src/store/index'
-import CheckOut from './component/CartWidget/CheckOut'
+import CheckOut from './component/checkout/CheckOut'
 import Category from './component/Category/Category'
 
 

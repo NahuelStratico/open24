@@ -2,7 +2,7 @@ const firebase = require('firebase');
 require("firebase/firestore");
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDLoIfphlKAWw1GSDfXFEV8sYosX7d8qyc",
+  apiKey: process.env.API_KEY,
   authDomain: "open24-6bfd2.firebaseapp.com",
   projectId: "open24-6bfd2",
 });

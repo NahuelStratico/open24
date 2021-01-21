@@ -67,7 +67,7 @@ const ItemCartContainer = () => {
                                     <img src={`/products/${item.img}`} alt={item.descripcion} className="img-detail"/>
                                     <div className="descripcion-container">
                                         <div className="title-container">
-                                            <h2>{item.nombre}</h2>
+                                            <h2>{item.titulo}</h2>
                                             <span>${item.precio * counter}</span>
                                         </div>
                                         <p>{item.descripcion}</p>
@@ -86,7 +86,7 @@ const ItemCartContainer = () => {
                     }
                     <div className="total">
                         <Link to="/checkout">Pagar</Link>   
-                        <h3>Total: ${data.total}</h3>
+                        <h3>Total: ${data.total * counter}</h3>
                     </div>
                 
                 </div>
