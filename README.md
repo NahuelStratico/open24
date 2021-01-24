@@ -14,11 +14,11 @@ You will also see any lint errors in the console.
 
 ## Librerías tuilizadas en el proyecto.
 
-##Bootstrap
+## Bootstrap
 
-Utilicé #Bootstrap para tener un diseño más consistente y agil a la hora de hacer responsive la web app. 
+Utilicé Bootstrap para tener un diseño más consistente y agil a la hora de hacer responsive la web app. 
 Me sirvio en componentes como el formulario, entre otras cosas.
 
-##Sweet alert
+## Sweet alert
 Instalé la esta libreria que me permitio utilizar alertas y mensajes muy bien diseñados. 
 Además es muy facil de implementar. https://sweetalert2.github.io/
