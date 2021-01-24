@@ -2,14 +2,17 @@ import {useState, useContext} from 'react';
 import {Redirect} from 'react-router-dom';
 import Swal from 'sweetalert2';
 import {Store} from '../store';
-import '../component/detail.css'
+import '../component/detail.css';
+import CartCounter from '../component/CartWidget/CartCounter';
 
 
 const ItemDetail = ({item}) => {
     const [data, setData] = useContext(Store);
     const [counter, setCounter] = useState(1);
     const [redirect, setRedirect] = useState(false);
-    const [message, setMessage] = useState("")
+    const [message, setMessage] = useState("");
+
+    item.pedidos= counter;
 
     // Funcion agregar al carrito
      function addCart(id){
@@ -23,14 +26,15 @@ const ItemDetail = ({item}) => {
              })
              setData(
                 {...data,
-                cantidad: data.cantidad + counter,
+                cantidad: data.cantidad += counter,
                 items: [...data.items, item],
                 total: data.total + (item.precio * counter)
                }
            )   
-        }else{
-            alert('El producto ya fue agregado al carrito')
         }
+        // else{
+        //     alert('El producto ya fue agregado al carrito')
+        // }
        
         // setMessage(Swal.fire({
         //     position: 'center',
@@ -46,22 +50,22 @@ const ItemDetail = ({item}) => {
     }
 
     // Funcion contador sumar
-    function onAdd(){
-        if(counter >= 5){
-            alert('Llegaste al limite del Stock')
-        }else{
-            setCounter(counter + 1)
-        }
-    }
+    // function onAdd(){
+    //     if(counter >= 5){
+    //         alert('Llegaste al limite del Stock')
+    //     }else{
+    //         setCounter(counter + 1)
+    //     }
+    // }
     
     // Funcion contador restar
-    function rest(){
-        if(counter <= 1){
-            alert('Llegaste al minimo de stock')
-        }else{
-            setCounter(counter - 1)
-        }
-    }
+    // function rest(){
+    //     if(counter <= 1){
+    //         alert('Llegaste al minimo de stock')
+    //     }else{
+    //         setCounter(counter - 1)
+    //     }
+    // }
 
     return(
         <>  
@@ -73,13 +77,18 @@ const ItemDetail = ({item}) => {
                             <h2>{item.titulo}</h2>
                             <span>${item.precio * counter}</span>
                         </div>
-                        <p>{item.descripcion}</p>
+                        <p className="item-descripcion">{item.descripcion}</p>
                         <p>{item.content}</p>
-                        <div className="conter-container">
+                        {/* <div className="conter-container">
                             <button onClick={() => rest()} disabled={counter <= 1}>-</button>
                             <span>{counter}</span>
                             <button onClick={() => onAdd()} disabled={counter >= 5}>+</button>
-                        </div>
+                        </div> */}
+                        <CartCounter
+                            item={item}
+                            counter={counter}
+                            setCounter={setCounter}
+                        />
                         <button onClick={() => addCart(item.id)} className="btn-cart">Agregar al carrito</button>
                     </div>
 

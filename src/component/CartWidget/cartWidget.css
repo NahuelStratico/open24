@@ -24,10 +24,7 @@
     justify-content: center;
     align-items: center;
 }
-.cart-container{
-    position: relative;
-    border: 1px solid #ccc;
-}
+
 .delete{
     position: absolute;
     top: 0px;
@@ -67,4 +64,35 @@
 .form-checkout{
     width: 50%;
     margin: 20px 0;
+}
+.img-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.img_detail-checkout{
+    width: 150px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+.img-descripcion{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    height: 100px;
+}
+.img-descripcion h2{
+    margin: 0;
+}
+.descripcion{
+    margin: 0;
+}
+.title-descripcion{
+    display: flex;
+    flex-direction: column;
 }

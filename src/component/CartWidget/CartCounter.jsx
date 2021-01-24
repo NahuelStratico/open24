@@ -1,8 +1,10 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
+import {Store} from '../../store';
 
-const CartCounter = () => {
+const CartCounter = ({item, counter, setCounter}) => {
+    const [data, setData] = useContext(Store);
 
-    const [counter, setCounter] = useState(1)
+
 
     function onAdd(){
         if(counter >= 5){

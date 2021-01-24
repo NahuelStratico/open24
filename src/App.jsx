@@ -9,6 +9,7 @@ import ItemCartContainer from './containers/ItemCartContainer'
 import {Store} from '../src/store/index'
 import CheckOut from './component/checkout/CheckOut'
 import Category from './component/Category/Category'
+import CartContainer from './component/CartWidget/CartContainer'
 
 
 function App() {
@@ -35,7 +36,8 @@ function App() {
           <ItemDetailContainer/>
         </Route>
         <Route exact path="/cart">
-          <ItemCartContainer/>
+          {/* <ItemCartContainer/> */}
+          <CartContainer/>
         </Route>
         <Route>
           <CheckOut exact path="/checkout"/>
