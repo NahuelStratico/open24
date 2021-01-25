@@ -24,6 +24,11 @@ Además es muy facil de implementar._ https://sweetalert2.github.io/
 
 ![Mapa del sitio](https://user-images.githubusercontent.com/49825382/105654583-116a7d00-5e9d-11eb-9a3c-07aabf5cd1c5.png)
 
+### Gif - recorrido por la app
+
+👉 https://gph.is/g/4gwyLgX
+
+
 ## Desafíos 🧠 y Conclusión 💪
 
 _Como primer desafío se me presentó hacer un ecommerce, que es algo que nunca había hecho y tenia muchas dudas ya que siempre me parecio difícil
