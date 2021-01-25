@@ -1,68 +1,46 @@
-# Ecommerce de Open 24/7, una cadena de comercios orientados a drugstore y servicios.
+# Ecommerce Open 24/7, 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_Open 24/7 es una cadena de comercios orientados a drugstore y servicios._
 
-## Para correr la app: 
+## Comenzando 🚀 
 
-### `npm start`
+_Para iniciar y correr la app en la consola ingresar el comando (correrá en el Localhost:3000):_
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm start
+```
+### Instalaciónes de librerías externas 🔧
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## `Bootstrap`
 
-### `yarn test`
+_Utilicé Bootstrap para tener un diseño más consistente y ágil a la hora de hacer responsive la web app. 
+Me sirvió en componentes como el formulario, entre otras cosas._
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## `Sweet alert`
+_Instalé esta librería que me permitio utilizar alertas y mensajes muy bien diseñados. 
+Además es muy facil de implementar._ https://sweetalert2.github.io/ 
 
-### `yarn build`
+### Mapa del sitio 📌
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Mapa del sitio](https://user-images.githubusercontent.com/49825382/105654583-116a7d00-5e9d-11eb-9a3c-07aabf5cd1c5.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Gif - recorrido por la app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+👉 https://gph.is/g/4gwyLgX
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Desafíos 🧠 y Conclusión 💪
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+_Como primer desafío se me presentó hacer un ecommerce, que es algo que nunca había hecho y tenia muchas dudas ya que siempre me parecio difícil
+para un junior.
+Tuve problemas con el carrito de compras, en primer lugar no sabía como hacer para que los valores de cantidad de productos y los productos pasaran de la vista de detalle
+al carrito. Y como segundo inconveniente sumar el total de cada producto y luego el total de todos fue un verdadero desafío.
+Estoy conforme con el trabajo realizado, siempre puede estar mejor, pero creo que hice un buen trabajo para ser mi primer ecommerce y con react.
+Este proyecto me invito a pensar y exigirme como desarrollador y es ahí donde uno crece. 
+No voy a negar que me frustre MUCHÍSIMO._ 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+_Creo que se puede mejorar el trabajo realizado en cuestiones como el ahorro de código principalmente y la prolijidad.
+En aspectos técnicos me gustaría agregarle un buscador, cosa que trataré de hacer como meta personal._
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+⌨️ con ❤️ por [NahuelStratico](https://nahuelstratico.github.io/portfolioReact/) 😊
