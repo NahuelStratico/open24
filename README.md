@@ -35,7 +35,7 @@ Este proyecto me invito a pensar y exigirme como desarrollador y es ahí donde u
 No voy a negar que me frustre MUCHÍSIMO._ 
 
 _Creo que se puede mejorar el trabajo realizado en cuestiones como el ahorro de código principalmente y la prolijidad.
-En aspectos técnicos me gustaría agregarle un buscador, cosa que trataré de hacer como meta personal. _
+En aspectos técnicos me gustaría agregarle un buscador, cosa que trataré de hacer como meta personal._
 
 ---
 ⌨️ con ❤️ por [NahuelStratico](https://nahuelstratico.github.io/portfolioReact/) 😊
