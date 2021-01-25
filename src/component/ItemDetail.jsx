@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import {Store} from '../store';
 import '../component/detail.css';
 import CartCounter from '../component/CartWidget/CartCounter';
+import {getFirestore} from '../firebase/index'
 
 
 const ItemDetail = ({item}) => {
@@ -11,26 +12,45 @@ const ItemDetail = ({item}) => {
     const [counter, setCounter] = useState(1);
     const [redirect, setRedirect] = useState(false);
     const [message, setMessage] = useState("");
+    const db = getFirestore();
+    const [stock, setStock] = useState(item.stock);
+
+    console.log(stock)
 
     item.pedidos= counter;
 
     // Funcion agregar al carrito
-     function addCart(id){
-         const check = data.items.every(item => {
-             return item.id !== id
-         })
+        function addCart(id){
+        const check = data.items.every(item => {
+            return item.id !== id
+        })
 
-         if(check){
-             data.items.filter(product => {
-                 return product.id === id
-             })
-             setData(
+        if(check){
+
+            // Verifico si el ID del producto es el mismo del clickeado
+            data.items.filter(product => {
+                return product.id === id
+            })
+
+            // Actualizo el stock de la base de datos
+            setStock(stock -1);
+
+            db.collection('productos').doc(id).update({
+                stock: stock,
+            })
+            .then(() => console.log('Se actualizó correctamente'))
+            .catch(error => console.log(error));
+
+            // Atualizo el context
+            setData(
                 {...data,
                 cantidad: data.cantidad += counter,
                 items: [...data.items, item],
                 total: data.total + (item.precio * counter)
-               }
-           )   
+                }
+            )   
+
+            // Mensaje de confirmación 
             setMessage(Swal.fire({
                 position: 'center',
                 icon: 'success',
@@ -47,17 +67,20 @@ const ItemDetail = ({item}) => {
                     }
                 })
             )
-        }
-        else{
+
+        }else{
+        // // Mensaje de que el producto ya se agrego al carrito
             setMessage(Swal.fire({
                 position: 'center',
                 icon: 'warning',
                 title: 'El producto ya fue agregado al carrito',
-              }))
+                }))
+            }
+                
         }
-       
-   
-    }
+
+    
+    console.log(stock)
 
     return(
         <>  
@@ -81,7 +104,12 @@ const ItemDetail = ({item}) => {
                             counter={counter}
                             setCounter={setCounter}
                         />
-                        <button onClick={() => addCart(item.id)} className="btn-cart">Agregar al carrito</button>
+                        {
+                            stock > 0 ?
+                            <button onClick={() => addCart(item.id)} className="btn-cart">Agregar al carrito</button>
+                            :
+                            <button className="btn-cart" disabled="disabled">Producto agotado</button>
+                        }
                     </div>
 
                    { redirect && <Redirect to="/cart"/> }                    

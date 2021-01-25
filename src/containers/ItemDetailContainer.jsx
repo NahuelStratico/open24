@@ -31,7 +31,8 @@ const ItemDetailContainer = () => {
             {
                 product ?
                 <ItemDetail 
-                item={product} />
+                item={product}
+                stock={product.stock} />
                 :
                 <div class="spinner-border text-primary" role="status">
                     <span class="sr-only">Cargand productos...</span>

@@ -5,8 +5,6 @@ const CounterCartCheck = ({items, counter,setCounter,pedidos,stock, setPrecioPro
     const [qty, setQty] =useState(counter);
     const [data, setData]=useContext(Store);   
 
-    console.log(qty);
-
     // Resta la cantidad de pedidos sobre cada producto
     const restarProducto = () => {
         items.pedidos= items.pedidos-1;

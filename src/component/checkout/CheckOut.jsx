@@ -50,7 +50,6 @@ const CheckOut = () => {
                 <h2 className="display-4">Checkout</h2>
 
                 {
-                    !venta ?
                     <form className="form-checkout" onSubmit={handleSubmitForm}>
                         <div className="form-group">
                             <input type="email" value={form.email} onChange={handleChangeInput} name="email"className="form-control"  placeholder="Email"/>
@@ -63,9 +62,8 @@ const CheckOut = () => {
                         </div>
                         
                         <button className="btn btn-primary">Confirmar compra</button>
-                    </form>:
+                    </form>
                     
-                    <p>La compra se realizó con éxito, tu número de seguimiento es: {idCompra}</p>
                 }
            </div>
         </div>
