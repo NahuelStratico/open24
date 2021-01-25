@@ -13,28 +13,28 @@ npm start
 
 ## `Bootstrap`
 
-_Utilicé Bootstrap para tener un diseño más consistente y agil a la hora de hacer responsive la web app. 
-Me sirvio en componentes como el formulario, entre otras cosas._
+_Utilicé Bootstrap para tener un diseño más consistente y ágil a la hora de hacer responsive la web app. 
+Me sirvió en componentes como el formulario, entre otras cosas._
 
 ## `Sweet alert`
-_Instalé la esta libreria que me permitio utilizar alertas y mensajes muy bien diseñados. 
-Además es muy facil de implementar. https://sweetalert2.github.io/ _
+_Instalé esta librería que me permitio utilizar alertas y mensajes muy bien diseñados. 
+Además es muy facil de implementar._ https://sweetalert2.github.io/ 
 
 ### Mapa del sitio 📌
 
 ![Mapa del sitio](https://user-images.githubusercontent.com/49825382/105654583-116a7d00-5e9d-11eb-9a3c-07aabf5cd1c5.png)
 
-## Desafios 🧠 y Conclusión 💪
+## Desafíos 🧠 y Conclusión 💪
 
-_Como primer desafio se me presento hacer un ecommerce, que es algo que nunca habia hecho y tenia muchas dudas ya que siempre me parecio difícil
+_Como primer desafío se me presentó hacer un ecommerce, que es algo que nunca había hecho y tenia muchas dudas ya que siempre me parecio difícil
 para un junior.
-Tuve problemas con el carrito de compras, en primer lugar no sabia como hacer para que los valores de cantidad de productos y los productos pasaran de la vista de detalle
-al carrito. Y como segundo inconveniente sumar el total de cada producto y luego el total de todos fue un verdadero desafio.
+Tuve problemas con el carrito de compras, en primer lugar no sabía como hacer para que los valores de cantidad de productos y los productos pasaran de la vista de detalle
+al carrito. Y como segundo inconveniente sumar el total de cada producto y luego el total de todos fue un verdadero desafío.
 Estoy conforme con el trabajo realizado, siempre puede estar mejor, pero creo que hice un buen trabajo para ser mi primer ecommerce y con react.
-Tambien me invito a pensar y exigirme como desarrollador y es ahí donde uno crece. 
-No voy a negar que me frustre MUCHISIMO. 
+Este proyecto me invito a pensar y exigirme como desarrollador y es ahí donde uno crece. 
+No voy a negar que me frustre MUCHÍSIMO._ 
 
-Creo que se puede mejorar el trabajo realizado en cuestiones como el ahorro de código principalmente y la prolijidad.
+_Creo que se puede mejorar el trabajo realizado en cuestiones como el ahorro de código principalmente y la prolijidad.
 En aspectos técnicos me gustaría agregarle un buscador, cosa que trataré de hacer como meta personal. _
 
 ---
