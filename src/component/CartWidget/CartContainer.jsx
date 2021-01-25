@@ -9,7 +9,7 @@ const CartContainer = () => {
     const [data, setData]= useContext(Store);
     const [prods, setProds]= useState([]);
 
-
+    // Agregar al localstorage los productos
     useEffect(() => {
         if(data.items.length){
             const productos=JSON.stringify(data.items);
@@ -26,42 +26,43 @@ const CartContainer = () => {
       }, [data.items])
 
 
-    return ( 
-    <>
-        <div className="mb-5">
-            <h3 className="text-center mt-5">Detalle de tu compra:</h3>
-                {
-                    data.items.length ?
-                    data.items.map((item)=>
-                    <>
-                        <CartProduct 
-                            items={item} 
-                            key={item.id} 
-                            id={item.id} 
-                            img={item.img} 
-                            titulo={item.titulo} 
-                            precio={item.precio} 
-                            pedidos={item.pedidos}
-                            descripcion={item.descripcion}
-                        />
-                    </>
-                    )
-                    :
-                    <>
-                    
 
-                    </>
-                    
-                
-                }
-        
-                <div className="total">
-                    <Link to="/checkout">Pagar</Link>   
-                    <h3>Total: ${data.total}</h3>
-                </div>
-        </div>
-    </>
-    );
+    if(data.cantidad === 0){
+    return <div className="cart-empty">
+                <h2>Carrito vacio</h2>
+            </div> 
+    }else{
+
+        return ( 
+        <>
+            <div className="mb-5">
+                <h3 className="text-center mt-5">Detalle de tu compra:</h3>
+                    {
+                        data.items.map((item)=>
+                        <>
+                            <CartProduct 
+                                items={item} 
+                                key={item.id} 
+                                id={item.id} 
+                                img={item.img} 
+                                titulo={item.titulo} 
+                                precio={item.precio} 
+                                pedidos={item.pedidos}
+                                descripcion={item.descripcion}
+                            />
+                        </>
+                        )
+
+                    }
+            
+                    <div className="total">
+                        <Link to="/checkout">Pagar</Link>   
+                        <h3>Total: ${data.total}</h3>
+                    </div>
+            </div>
+        </>
+        );
+    }
 }
  
 export default CartContainer;

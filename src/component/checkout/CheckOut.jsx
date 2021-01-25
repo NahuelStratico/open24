@@ -3,7 +3,7 @@ import '../CartWidget/cartWidget.css'
 import {Store} from '../../store'
 import {getFirestore} from '../../firebase/index'
 import firebase from 'firebase/app';
-import { IoIosCloseCircleOutline } from 'react-icons/io';
+import Swal from 'sweetalert2';
 
 
 const CheckOut = () => {
@@ -34,6 +34,12 @@ const CheckOut = () => {
         .then(({id}) =>{
             setVenta(true);
             setIdCompra(id)
+            Swal.fire({
+                position: 'center',
+                icon: 'info',
+                title: `La compra se realizó con éxito, tu número de seguimiento es: ${id}`,
+            })
+            
         }) 
         .catch(e => console.log(e));
     }

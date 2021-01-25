@@ -1,5 +1,6 @@
 import {useState, useContext} from 'react';
 import {Store} from '../../store';
+import Swal from 'sweetalert2';
 import CounterCartCheck from './CounterCartCheck';
 import './cartWidget.css'
 
@@ -18,18 +19,32 @@ const CartProduct = ({items, key, id, img, titulo, precio, pedidos,descripcion})
     const deleteItem = id => {
         const prod = data.items.find((prod) => prod.id === id);
 
-        if(window.confirm('¿Querés eliminar el producto del carrito?')){
-            data.items.forEach((item, index) => {
-                 if(item.id === id) {
-                     data.items.splice(index, 1)
-                 }
-             })
-             setData({...data,
-                 cantidad: data.cantidad -1,
-                 items: [...data.items],
-                 total: data.total - (prod.precio * prod.pedidos)
-             });
-        }
+        Swal.fire({
+            title: '¿Querés eliminar el producto del carrito?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, eliminar!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                'Eliminado!',
+                'Producto eliminado con éxito.',
+                'success'
+              )
+              data.items.forEach((item, index) => {
+                if(item.id === id) {
+                    data.items.splice(index, 1)
+                }
+                })
+                setData({...data,
+                    cantidad: data.cantidad -1,
+                    items: [...data.items],
+                    total: data.total - (prod.precio * prod.pedidos)
+                });
+            }
+          })
     }
 
 
@@ -48,22 +63,18 @@ const CartProduct = ({items, key, id, img, titulo, precio, pedidos,descripcion})
                         <div className="title-descripcion">
                             <p>Precio por unidad: $ {precio}</p>
                             <p>Precio por cantidad: <b>$ {precioProducto*items.pedidos}</b> </p>
-                        </div>
-                        {/* <h3 className="text-center mb-3 Bellota-text-bold">{titulo} - ${precio}</h3> */}
-                        
-                            <CounterCartCheck
-                            key={items.id}
-                            items={items}
-                            counter={counter}
-                            setCounter={setCounter}
-                            pedidos={pedidos}
-                            stock={items.stock}
-                            setPrecioProducto={setPrecioProducto}
-                            precioProducto={items.precio}
-                            />
-                        
-                            <span onClick={() => deleteItem(id)} className="delete"> Eliminar </span>
-                        {/* <button onClick={ () => deleteItem(id)}>BORRAR</button> */}
+                        </div>                        
+                        <CounterCartCheck
+                        key={items.id}
+                        items={items}
+                        counter={counter}
+                        setCounter={setCounter}
+                        pedidos={pedidos}
+                        stock={items.stock}
+                        setPrecioProducto={setPrecioProducto}
+                        precioProducto={items.precio}
+                        />
+                        <span onClick={() => deleteItem(id)} className="delete"> Eliminar </span>
                     </div>
                 </article>
             </div>

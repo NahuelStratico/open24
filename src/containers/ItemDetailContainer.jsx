@@ -10,6 +10,7 @@ const ItemDetailContainer = () => {
     const {itemid} = useParams()
     const db = getFirestore()
 
+    // Traigo de la base de datos el detalle de los productos por ID
     const getProductsDB = () => {
         db.collection('productos').doc(itemid).get()
         .then(doc => {
@@ -32,7 +33,9 @@ const ItemDetailContainer = () => {
                 <ItemDetail 
                 item={product} />
                 :
-                <p>Cargando producto...</p>
+                <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Cargand productos...</span>
+                </div>
             }
         </>
     )   

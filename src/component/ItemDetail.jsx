@@ -31,41 +31,33 @@ const ItemDetail = ({item}) => {
                 total: data.total + (item.precio * counter)
                }
            )   
+            setMessage(Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Producto agregado',
+                text: "Tu producto fue agregado al carrito",
+                showDenyButton: false,
+                showCancelButton: true,
+                showConfirmButton: true,
+                confirmButtonText: `Ir al carrito`,
+                denyButtonText: `Seguir comprando`,
+                }).then(res =>{
+                    if(res.isConfirmed){
+                        setRedirect(true)
+                    }
+                })
+            )
         }
-        // else{
-        //     alert('El producto ya fue agregado al carrito')
-        // }
+        else{
+            setMessage(Swal.fire({
+                position: 'center',
+                icon: 'warning',
+                title: 'El producto ya fue agregado al carrito',
+              }))
+        }
        
-        // setMessage(Swal.fire({
-        //     position: 'center',
-        //     icon: 'success',
-        //     title: 'Producto agregado',
-        //     text: "Tu producto fue agregado al carrito",
-        //     showConfirmButton: false,
-        //     timer: 2000
-        //   }))
-        // setTimeout(() => {
-        //     setRedirect(true)
-        // }, 2500);  
+   
     }
-
-    // Funcion contador sumar
-    // function onAdd(){
-    //     if(counter >= 5){
-    //         alert('Llegaste al limite del Stock')
-    //     }else{
-    //         setCounter(counter + 1)
-    //     }
-    // }
-    
-    // Funcion contador restar
-    // function rest(){
-    //     if(counter <= 1){
-    //         alert('Llegaste al minimo de stock')
-    //     }else{
-    //         setCounter(counter - 1)
-    //     }
-    // }
 
     return(
         <>  
