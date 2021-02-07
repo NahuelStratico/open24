@@ -43,7 +43,7 @@ const CartContainer = () => {
                             <tr>
                                 <th scope="col"></th>
                                 <th scope="col">Producto</th>
-                                <th scope="col">cantidad</th>
+                                <th scope="col">Cantidad</th>
                                 <th scope="col">Categoria</th>
                                 <th scope="col">Precio</th>
                                 <th className="has-text-cremita is-narrow quit">Quitar</th>

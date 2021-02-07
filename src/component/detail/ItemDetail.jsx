@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import {Store} from '../../store';
 import './detail.css';
 import CartCounter from '../CartWidget/CartCounter';
-import {getFirestore} from '../../firebase/index'
+
 
 
 
@@ -13,10 +13,7 @@ const ItemDetail = ({item}) => {
     const [counter, setCounter] = useState(1);
     const [redirect, setRedirect] = useState(false);
     const [message, setMessage] = useState("");
-    const db = getFirestore();
     const [stock, setStock] = useState(item.stock);
-
-    console.log(stock)
 
     item.pedidos= counter;
 
@@ -73,8 +70,6 @@ const ItemDetail = ({item}) => {
                 
         }
 
-        console.log(item)
-    console.log(stock)
 
     return(
         <>  
@@ -88,11 +83,6 @@ const ItemDetail = ({item}) => {
                         </div>
                         <p className="item-descripcion">{item.descripcion}</p>
                         <p>{item.content}</p>
-                        {/* <div className="conter-container">
-                            <button onClick={() => rest()} disabled={counter <= 1}>-</button>
-                            <span>{counter}</span>
-                            <button onClick={() => onAdd()} disabled={counter >= 5}>+</button>
-                        </div> */}
                         <CartCounter
                             item={item}
                             counter={counter}

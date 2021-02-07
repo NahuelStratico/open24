@@ -5,15 +5,12 @@ import CounterCartCheck from './CounterCartCheck';
 import './cartWidget.css'
 
 
-const CartProduct = ({items, key, id, img, titulo, precio, pedidos,descripcion}) => {
+const CartProduct = ({items, id, img, titulo, precio, pedidos}) => {
 
     const [counter, setCounter]= useState(pedidos);
     const [data, setData]= useContext(Store);
-
-
     const [precioProducto,setPrecioProducto]= useState(precio);
-/*     const [cantidadProducto,setCantidadProducto]= useState(cantidad) */
-    console.log(precioProducto)
+
   
     // Funcion eliminar item del carrito
     const deleteItem = id => {

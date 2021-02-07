@@ -1,8 +1,7 @@
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import ItemDetail from '../component/detail/ItemDetail';
-import {getFirestore} from '../firebase/index'
-import {Link} from 'react-router-dom'
+import {getFirestore} from '../firebase/index';
 
 
 const ItemDetailContainer = () => {
@@ -29,16 +28,18 @@ const ItemDetailContainer = () => {
     
     return(
         <>
-            {
-                product ?
-                <ItemDetail 
-                item={product}
-                stock={product.stock} />
-                :
-                <div class="spinner-border text-primary" role="status">
-                    <span class="sr-only">Cargand productos...</span>
-                </div>
-            }
+            <div className="container">
+                {
+                    product ?
+                    <ItemDetail 
+                    item={product}
+                    stock={product.stock} />
+                    :
+                    <div class="spinner-border text-primary mt-5" role="status">
+                        <span class="sr-only">Cargand productos...</span>
+                    </div>
+                }
+            </div>
         </>
     )   
 }

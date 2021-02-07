@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
-import {getFirestore} from '../../firebase/index'
-import ItemListContainer from '../../containers/ItemListContainer'
+import {getFirestore} from '../../../firebase/index';
+import ItemListContainer from '../../../containers/ItemListContainer';
 
 const PromoProducts = () => {
 

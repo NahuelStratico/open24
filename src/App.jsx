@@ -5,7 +5,6 @@ import Navbar from './component/general/navbar/Navbar';
 import {BrowserRouter, Switch,Route} from 'react-router-dom';
 import Home from './component/home/Home';
 import ItemDetailContainer from './containers/ItemDetailContainer';
-import ItemCartContainer from './containers/ItemCartContainer';
 import {Store} from '../src/store/index';
 import CheckOut from './component/checkout/CheckOut';
 import Category from './component/Category/Category';
@@ -15,7 +14,7 @@ import Footer from './component/general/footer/Footer';
 
 
 function App() {
-
+  // Defino mi Context
   const [data, setData] = useState({
     items:[],
     cantidad:0,
@@ -38,7 +37,6 @@ function App() {
             <ItemDetailContainer/>
           </Route>
           <Route exact path="/cart">
-            {/* <ItemCartContainer/> */}
             <CartContainer/>
           </Route>
           <Route path="/checkout">

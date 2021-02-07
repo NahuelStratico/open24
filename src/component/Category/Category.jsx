@@ -1,6 +1,5 @@
 import {useState, useEffect} from 'react';
 import './category.css';
-// import {listaProductos} from '../../assets/listaProductos'
 import ItemListContainer from '../../containers/ItemListContainer';
 import {useParams} from 'react-router-dom';
 import {getFirestore} from '../../firebase/index';
@@ -10,38 +9,10 @@ const Category = () => {
 
     const [products, setProducts] = useState([])
     const db = getFirestore();
-
     const {categoryid} = useParams()
 
-    // const getProductsFromDB = () => {
-    //     db.collection('productos').get()
-    //     .then(docs => {
-    //         let arr = [];
-    //         docs.forEach(doc => {
-    //             arr.push({id: doc.id, data: doc.data()})
-    //         })
-
-    //         setProducts(arr)
-    //     })
-    //     .catch(e => console.log(e));
-    // }
-
-    // const getProducts = new Promise( (resolve, reject) => {
-    //     setTimeout( () => {
-    //         resolve(listaProductos);
-    //     }, 500)
-    // })
-
+    // Filtro la busqueda por categoria
     useEffect(() => {
-        // getProductsFromDB();
-        // getProducts.then( res => {
-        //     if(categoryid){
-        //         const productoCategory = res.filter( producto => producto.categoria === categoryid)
-        //         setProducts(productoCategory)
-        //     }else{
-        //         setProducts(res)
-        //     }
-        // })
         if(categoryid) {
             db.collection('productos').where('categoria', '==', categoryid).get()
             .then(response => {
@@ -54,7 +25,6 @@ const Category = () => {
             })
         }
     },[categoryid])
-
 
 
     return(

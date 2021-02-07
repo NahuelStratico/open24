@@ -1,9 +1,5 @@
-import {useState, useContext} from 'react'
-import {Store} from '../../store';
 
-const CartCounter = ({item, counter, setCounter}) => {
-    const [data, setData] = useContext(Store);
-
+const CartCounter = ({counter, setCounter}) => {
 
 
     function onAdd(){

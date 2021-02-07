@@ -1,9 +1,12 @@
-import PromoProducts from '../PromoProducts/PromoProducts';
-import Footer from '../general/footer/Footer'
+import PromoProducts from './PromoProducts/PromoProducts';
+import Carrousel from './carrousel/Carrousel';
 
 const Home = () => {
     return(
+        <>  
+            <Carrousel />
             <PromoProducts />
+        </>
     )
 }
 

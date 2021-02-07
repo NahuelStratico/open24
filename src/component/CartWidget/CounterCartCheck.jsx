@@ -2,7 +2,7 @@ import {useState, useContext} from 'react';
 import {Store} from '../../store';
 import './cartWidget.css';
 
-const CounterCartCheck = ({items, counter,setCounter,pedidos,stock, setPrecioProducto, precioProducto}) => {
+const CounterCartCheck = ({items, counter,stock, precioProducto}) => {
     const [qty, setQty] =useState(counter);
     const [data, setData]=useContext(Store);   
 
