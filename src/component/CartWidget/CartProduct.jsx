@@ -28,10 +28,13 @@ const CartProduct = ({items, key, id, img, titulo, precio, pedidos,descripcion})
             confirmButtonText: 'Si, eliminar!'
           }).then((result) => {
             if (result.isConfirmed) {
-              Swal.fire(
-                'Eliminado!',
-                'Producto eliminado con éxito.',
-                'success'
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Producto eliminado con éxito',
+                showConfirmButton: false,
+                timer: 1500
+                }
               )
               data.items.forEach((item, index) => {
                 if(item.id === id) {
@@ -39,7 +42,7 @@ const CartProduct = ({items, key, id, img, titulo, precio, pedidos,descripcion})
                 }
                 })
                 setData({...data,
-                    cantidad: data.cantidad -1,
+                    cantidad: data.cantidad - prod.pedidos,
                     items: [...data.items],
                     total: data.total - (prod.precio * prod.pedidos)
                 });
@@ -49,35 +52,28 @@ const CartProduct = ({items, key, id, img, titulo, precio, pedidos,descripcion})
 
 
     return (
-        <>
-            <div className="container detail-container">
-                <article className="detail">
-                    <div className="img-group">
-                        <img src={`../../../products/${img}`} alt={titulo} className="img_detail-checkout"/>
-                        <div className="img-descripcion">
-                            <h2>{titulo}</h2>
-                            <p className="descripcion">Categoria: {descripcion}</p>
-                        </div>
-                    </div>
-                    <div className="descripcion-container">
-                        <div className="title-descripcion">
-                            <p>Precio por unidad: $ {precio}</p>
-                            <p>Precio por cantidad: <b>$ {precioProducto*items.pedidos}</b> </p>
-                        </div>                        
-                        <CounterCartCheck
-                        key={items.id}
-                        items={items}
-                        counter={counter}
-                        setCounter={setCounter}
-                        pedidos={pedidos}
-                        stock={items.stock}
-                        setPrecioProducto={setPrecioProducto}
-                        precioProducto={items.precio}
-                        />
-                        <span onClick={() => deleteItem(id)} className="delete"> Eliminar </span>
-                    </div>
-                </article>
-            </div>
+        <>  
+            <tr>
+                <th scope="row"><img src={`../../../products/${img}`} alt={titulo} className="img_detail-checkout"/></th>
+                <td class="title_category">{titulo}</td>
+                <td>
+                    <CounterCartCheck
+                    key={items.id}
+                    items={items}
+                    counter={counter}
+                    setCounter={setCounter}
+                    pedidos={pedidos}
+                    stock={items.stock}
+                    setPrecioProducto={setPrecioProducto}
+                    precioProducto={items.precio}
+                    />
+                </td>
+                <td class="title_category">{items.categoria.split('-').join(' ')}</td>
+                <td className="font-weight-bold">$ {precioProducto*items.pedidos}</td>
+                <td  onClick={() => deleteItem(id)} className="quit"> 
+                <span className="quit_icon">x</span>  
+                </td> 
+            </tr>
 
         </>
       );

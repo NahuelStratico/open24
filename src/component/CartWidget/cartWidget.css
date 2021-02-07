@@ -11,12 +11,13 @@
     width: 1.3rem;
     height: 1.3rem;
     font-size: 0.8rem;
+    font-weight: 500;
     position: absolute;
     right: -0.5rem;
     top: -0.5rem;
-    background: #fff;
-    line-height: 0;
-    color: var(--color-principal);
+    background: rgb(173, 2, 2);
+    line-height: 1;
+    color: #fff;
 }
 .detail-container{
     display: flex;
@@ -72,12 +73,13 @@
     align-items: center;
 }
 .img_detail-checkout{
-    width: 150px;
+    width: 50px;
     height: auto;
     display: block;
     object-fit: cover;
     border-radius: 4px;
-    margin-right: 10px;
+    margin-right: 0;
+    margin-left: 10px;
 }
 .img-descripcion{
     display: flex;
@@ -95,4 +97,50 @@
 .title-descripcion{
     display: flex;
     flex-direction: column;
+}
+.table td, .table th {
+    padding: .20rem;
+    vertical-align: middle;
+}
+.quit{
+    text-align: center;
+    cursor: pointer;
+}
+.quit_icon{
+    background-color: rgba(10,10,10,.2);
+    border: none;
+    border-radius: 290486px;
+    cursor: pointer;
+    pointer-events: auto;
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    font-size: 0;
+    height: 20px;
+    max-height: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    outline: none;
+    position: relative;
+    vertical-align: top;
+    width: 20px;
+}
+.quit_icon::before{
+    height: 2px;
+    width: 50%;
+}
+.quit_icon::after{
+    height: 50%;
+    width: 2px;
+}
+.quit_icon::before, .quit_icon::after{
+    background-color: #fff;
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform-origin: center center;
 }

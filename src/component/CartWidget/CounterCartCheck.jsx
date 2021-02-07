@@ -1,5 +1,6 @@
 import {useState, useContext} from 'react';
 import {Store} from '../../store';
+import './cartWidget.css';
 
 const CounterCartCheck = ({items, counter,setCounter,pedidos,stock, setPrecioProducto, precioProducto}) => {
     const [qty, setQty] =useState(counter);
@@ -39,9 +40,19 @@ const CounterCartCheck = ({items, counter,setCounter,pedidos,stock, setPrecioPro
                 <button 
                 disabled={qty===1 ? 'disabled' : null }   
                 onClick={ () => restarProducto()}
-                className="">-</button>
-                <span>{qty}</span>
-                <button onClick={ () => sumarProducto()}>+</button>
+                className="btn btn-primary btn-sm"
+                >
+                    -
+                </button>
+
+                <span className="mx-2 font-weight-bold">{qty}</span>
+
+                <button 
+                onClick={ () => sumarProducto()}
+                className="btn btn-primary btn-sm"
+                >
+                    +
+                </button>
             </div>
         </>
 

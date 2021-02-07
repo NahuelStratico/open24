@@ -23,10 +23,16 @@ const CartCounter = ({item, counter, setCounter}) => {
     }
 
     return(
-        <div className="conter-container">
-            <button onClick={() => rest()} disabled={counter <= 1}>-</button>
-            <span>{counter}</span>
-            <button onClick={() => onAdd()} disabled={counter >= 5}>+</button>
+        <div className="conter-container field has-addons">
+            <div className="counter">
+                <button onClick={() => rest()} disabled={counter <= 1} className="button is-danger is-light">-</button>
+            </div>
+            <div className="counter">
+                <span className="input is-light has-text-centered is-narrow" readonly>{counter}</span>
+            </div>
+            <div className="counter">
+                <button onClick={() => onAdd()} disabled={counter >= 5} className="button is-success is-light">+</button>
+            </div>
         </div>
     )
 }

@@ -37,6 +37,19 @@ const CartContainer = () => {
         <>
             <div className="mb-5">
                 <h3 className="text-center mt-5">Detalle de tu compra:</h3>
+                <div className="container mt-5">
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Producto</th>
+                                <th scope="col">cantidad</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Precio</th>
+                                <th className="has-text-cremita is-narrow quit">Quitar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                     {
                         data.items.map((item)=>
                         <>
@@ -52,8 +65,11 @@ const CartContainer = () => {
                             />
                         </>
                         )
-
                     }
+
+                        </tbody>
+                    </table>
+                </div>
             
                     <div className="total">
                         <Link to="/checkout">Pagar</Link>   

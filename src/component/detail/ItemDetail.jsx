@@ -1,10 +1,11 @@
 import {useState, useContext} from 'react';
 import {Redirect} from 'react-router-dom';
 import Swal from 'sweetalert2';
-import {Store} from '../store';
-import '../component/detail.css';
-import CartCounter from '../component/CartWidget/CartCounter';
-import {getFirestore} from '../firebase/index'
+import {Store} from '../../store';
+import './detail.css';
+import CartCounter from '../CartWidget/CartCounter';
+import {getFirestore} from '../../firebase/index'
+
 
 
 const ItemDetail = ({item}) => {
@@ -25,6 +26,8 @@ const ItemDetail = ({item}) => {
             return item.id !== id
         })
 
+    
+
         if(check){
 
             // Verifico si el ID del producto es el mismo del clickeado
@@ -32,19 +35,10 @@ const ItemDetail = ({item}) => {
                 return product.id === id
             })
 
-            // Actualizo el stock de la base de datos
-            setStock(stock -1);
-
-            db.collection('productos').doc(id).update({
-                stock: stock,
-            })
-            .then(() => console.log('Se actualizó correctamente'))
-            .catch(error => console.log(error));
-
             // Atualizo el context
             setData(
                 {...data,
-                cantidad: data.cantidad += counter,
+                cantidad: data.cantidad + counter,
                 items: [...data.items, item],
                 total: data.total + (item.precio * counter)
                 }
@@ -60,7 +54,7 @@ const ItemDetail = ({item}) => {
                 showCancelButton: true,
                 showConfirmButton: true,
                 confirmButtonText: `Ir al carrito`,
-                denyButtonText: `Seguir comprando`,
+                cancelButtonText: `Seguir comprando`,
                 }).then(res =>{
                     if(res.isConfirmed){
                         setRedirect(true)
@@ -79,7 +73,7 @@ const ItemDetail = ({item}) => {
                 
         }
 
-    
+        console.log(item)
     console.log(stock)
 
     return(

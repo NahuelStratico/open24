@@ -23,6 +23,12 @@ li{
 .card-ui:hover{
     box-shadow: none;
 }
+.title_category::first-letter{
+    text-transform: uppercase;
+}
+.link_category{
+    color: #333333;
+}
 
 @media screen and (max-width:678px){
     .products{

@@ -47,6 +47,7 @@ const ItemCartContainer = () => {
         
     // }
 
+    console.log(data.cantidad)
     
     if(data.cantidad === 0){
         return <div className="cart-empty">
@@ -59,8 +60,35 @@ const ItemCartContainer = () => {
                 <div className="mb-5">
     
                     <h3 className="text-center mt-5">Detalle de tu compra:</h3>
+                    <div className="container mt-5">
+                        <table className="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Categoria</th>
+                                    <th scope="col">Precio</th>
+                                    <th className="has-text-cremita is-narrow">Quitar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    { 
+                        data.items.map((item, index) => (
+                                
+                                <tr key={index}>
+                                    <td>{item.titulo}</td>
+                                    <td>{data.cantidad}</td>
+                                    <td>{item.categoria}</td>
+                                    <td>{item.precio}</td>
+                                    <td  onClick={() => deleteItem(item.id)}> X </td> 
+                                </tr>
+                        ))
+                    }
+                            </tbody>
+                        </table>
+                    </div>
     
-                    {
+                    {/* {
                         
                         data.items.map((item, index) => (
                             <div className="container detail-container">
@@ -72,25 +100,26 @@ const ItemCartContainer = () => {
                                             <span>${item.precio * counter}</span>
                                         </div>
                                         <p>{item.descripcion}</p>
-                                        <p>{item.content}</p>
+                                        <p>{item.content}</p> */}
                                         {/* <div className="conter-container">
                                             <button onClick={() => rest()} disabled={counter <= 1}>-</button>
                                             <span>{data.cantidad}</span>
                                             <button onClick={() => onAdd()} disabled={counter >= 5}>+</button>
-                                        </div> */}
-                                        <CartCounter
+                                        </div>  */}
+                                         {/* <CartCounter
                                           
-                                        />
-                                        <span onClick={() => deleteItem(item.id)} className="delete"> X </span>
-                                    </div>
-                                </article>
-                            </div>
-                        ))
+                                        />  */}
+                                         {/* <p>Cantidad: {item.cantidad}</p>
+                                         <span onClick={() => deleteItem(item.id)} className="delete"> Eliminar </span>
+                                     </div>
+                                 </article>
+                             </div>
+                        )) */}
     
-                    }
+                    {/* } */}
                     <div className="total">
                         <Link to="/checkout">Pagar</Link>   
-                        <h3>Total: ${data.total * counter}</h3>
+                        <h3>Total: ${data.total}</h3>
                     </div>
                 
                 </div>
