@@ -6,6 +6,8 @@ const PromoProducts = () => {
 
     const [Promo, setPromo] = useState([]);
     const db = getFirestore();
+
+    // Filtrado de productos destacados
     useEffect(() => {
         db.collection('productos').where("promo", "==", true).get()
         .then(response => {
@@ -17,6 +19,8 @@ const PromoProducts = () => {
             setPromo(array);
         })
     },[])
+
+
     return(
         <>
             <div className="container my-4 d-flex flex-column">
